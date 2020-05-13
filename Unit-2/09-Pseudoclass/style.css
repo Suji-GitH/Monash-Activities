@@ -1,0 +1,31 @@
+*{
+    font-weight: bold;
+    font-size: x-large;
+}
+
+h1 {
+    color: red;
+}
+
+a:hover{
+    color: seagreen;
+}
+
+a:active{
+    color: orange;
+}
+
+input:focus {
+    background-color: lightblue;
+}
+
+button:hover {
+    color: lightcoral;
+    background-color: lightgoldenrodyellow;
+    font-style: italic;
+}
+
+button:active {
+    background-color: black;
+    padding: 10px;
+}

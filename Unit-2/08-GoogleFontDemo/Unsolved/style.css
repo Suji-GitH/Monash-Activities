@@ -3,3 +3,14 @@
  **/
 
 /* Add in the Google Fonts of your choice */
+body {
+    font-family: 'Lobster', cursive;
+}
+
+p {
+    font-family: 'Shadows Into Light', cursive;
+}
+
+h4 {
+    font-family: 'Special Elite', cursive;
+}
