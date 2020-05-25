@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+
+    <script>
+
+        //Array is an collection of data, start by defining the variable and [] contains the data. It can be any type and even functions.
+
+        var fruit = ["apple", "peach", "grapes"];
+        var numbers = [1, 2, 3, 4, 5];
+        var mixedData = ["one", 2, "three"];
+        var multiNest = ["apple", ["pink lady", "green apple"]];
+
+        //Print out values of Array
+        console.log(fruit);
+
+        //length of Array .length 
+        console.log(numbers.length);
+
+        //Access last array item
+        console.log(fruit[fruit.length-1]);
+
+        //Access Array item. Array index starts from 0
+        console.log(mixedData[0]);
+
+        //.indexOf() search specific element and return the index value
+        console.log(numbers.indexOf(4));
+
+        //Loop over an Array finding index to element(array values)
+        mixedData.forEach(function(e, i, array){
+            console.log(i + " " + e);
+        });
+
+        //adding value to an Array .push(), adds an element to end of Array
+        mixedData.push(3);
+        console.log(mixedData);
+
+        //remove an element from an Array .pop(), removes the last element
+        mixedData.pop();
+
+            //finding out which element is removed
+        var removedElementMD = mixedData.pop();
+
+        console.log(mixedData);
+        console.log(removedElementMD);
+
+        //remove an element from the front of an Array .shift()
+        numbers.shift();
+
+        var removedElementN = numbers.shift();
+
+        console.log(numbers);
+        console.log(removedElementN);
+
+        //add an element to the front of an Array .unshift()
+        numbers.unshift(7);
+
+        console.log(numbers);
+
+        //remove or add elements at certain index position .splice(), (Position, how many elements, elements to add else leave blank for remove)
+        fruit.splice(0);
+
+        fruit.splice(0, 1, "mango", "peach", "grape");
+
+        console.log(fruit);
+
+        //Copy an Array
+        var apple = multiNest.slice("pink lady", "green apple"); 
+
+        apple.slice();
+
+        console.log(apple);
+
+        //Sorting Array .sort()
+
+        fruit.sort();
+
+        console.log(fruit);
+
+    </script>
+    
+
+</body>
+</html>

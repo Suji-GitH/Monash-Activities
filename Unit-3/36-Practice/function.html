@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+
+    <script>
+        //Function
+
+        //Input
+        var nameInput = "John"
+        var aA = 5
+        var bB = 9
+
+        //function for greeting
+        function greetings(name) {
+            console.log("Hello, " + name);
+        }
+
+        // function for sum of two numbers
+        function sum(a, b) {
+            return a + b;
+        }
+
+        //function for executing function greeting and function sum
+        function main(name, a, b) {
+            greetings(nameInput);
+            //return value needs a var to store
+            var plus = sum(aA, bB);
+            console.log(plus);
+        }
+
+        //Execute function
+        main();
+
+        //Call back function
+
+        function adder (x, y) {
+            return x + y
+        }
+
+        function multiply (x, y) {
+            return x*y
+        }
+
+        function math (equation) {
+            console.log(equation);
+        }
+
+
+        var x = 9;
+        var y = 8;
+
+        math(adder);
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

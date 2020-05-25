@@ -1,67 +1,101 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>My First Object</title>
-  </head>
-  <body>
 
-    <script>
+<head>
+  <meta charset="UTF-8">
+  <title>My First Object</title>
+</head>
 
-      var car = {
-        make: "Honda",
-        model: "Fit",
-        color: "Blue Raspberry",
-        mileage: 3000,
-        isWorking: true,
+<body>
 
-        driveToWork: function() {
+  <script>
 
-          alert("Old Mileage: " + this.mileage);
+    var betterCar = {
+      make: "Lambo",
+      model: "Aventador",
+      color: "Orange",
+      Km: "500",
+      isWorking: true,
 
-          this.mileage = this.mileage + 8;
+    };
 
-          alert("New mileage: " + this.mileage);
-        },
+    // How would we log...
+    console.log(betterCar);
 
-        driveAroundWorld: function() {
+    // The car's make?
+    // dot notation is for single word, if you use square bracket use ""
+    console.log(betterCar.make);
 
-          alert("Old Mileage: " + this.mileage);
+    // The car's model?
+    console.log(betterCar.model);
 
-          this.mileage = this.mileage + 24000;
-
-          alert("New Mileage: " + this.mileage);
-          alert("Car needs a tuneup!");
-
-          this.isWorking = false;
-        },
-
-        getTuneUp: function() {
-          alert("Car is ready to go!");
-          this.isWorking = true;
-        },
-
-        honk: function() {
-          alert("Honk! Honk!");
-        }
-      };
+    // The car's mileage?
+    console.log(betterCar.Km);
 
 
-      // How would we log...
+    var car = {
+      make: "Honda",
+      model: "Fit",
+      color: "Blue Raspberry",
+      mileage: 3000,
+      isWorking: true,
 
-      // The car's make?
+      driveToWork: function () {
 
-      // The car's model?
+        alert("Old Mileage: " + this.mileage);
 
-      // The car's mileage?
+        var newMileage = this.mileage = this.mileage + 8;
 
-      // How would we run the car's driveToWork method?
+        alert("New mileage: " + this.mileage);
+      },
 
-      // How would we run the car's driveAroundWorld method?
+      driveAroundWorld: function () {
 
-      // How would we run the getTuneUp method?
+        alert("Old Mileage: " + this.mileage);
 
-    </script>
-    
-  </body>
+        this.mileage = this.mileage + 24000;
+
+        alert("New Mileage: " + this.mileage);
+        alert("Car needs a tuneup!");
+
+        this.isWorking = false;
+      },
+
+      getTuneUp: function () {
+        alert("Car is ready to go!");
+        this.isWorking = true;
+      },
+
+      honk: function () {
+        alert("Honk! Honk!");
+      }
+    };
+
+
+    // How would we log...
+    console.log(car);
+
+    // The car's make?
+    // dot notation is for single word, if you use square bracket use ""
+    console.log(car.make);
+
+    // The car's model?
+    console.log(car.model);
+
+    // The car's mileage?
+    console.log(car.mileage);
+
+    // How would we run the car's driveToWork method?
+    car.driveToWork();
+
+    // How would we run the car's driveAroundWorld method?
+    car.driveAroundWorld();
+
+    // How would we run the getTuneUp method?
+    car.getTuneUp();
+
+  </script>
+
+</body>
+
 </html>

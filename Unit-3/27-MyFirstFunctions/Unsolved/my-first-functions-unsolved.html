@@ -10,31 +10,58 @@
 
     <script>
 
+      // var xyz = ["x", "y", "z"]
+
       // FUNCTIONS
       // ================================================================================
 
       // Create a Function called "adder" that take three arguments (x, y, z).
       // The function should add the arguments together, and log the result to the console.
 
+      function adder(x, y, z) {
+        var total = x + y + z;
+        console.log(total);
+      }
+      
 
       // Create a Function called "multiplier" that takes three arguments (x, y, z).
       // The function should multiply the arguments, and log the result to the console.
+      function multiplier(x, y, z) {
+        var total = x * y * z;
+        console.log(total);
+      }
 
-
+     
       // Create a Function called "isString" that takes three arguments (x, y, z).
       // "isString" determines if all three arguments are strings and logs an appropriate response to the console.
+      function isString(x, y, z) {
+        for( i=0; i < arguments.length; i++){
+          console.log(typeof arguments[i]);
+        }
+      }
+
+      
 
 
+     
       // Create a Function called "vowelChecker" that takes in a single argument (x).
       // "vowlChecker" logs whether or not the input is a vowel.
-
+      function vowelChecker(x) {
+      
+      }
+      
 
       // BONUS
       // Creates a version of "adder" that returns its result. Function is called "adderReturn".
-
+      function adderReturn(x, y, z){
+        return (x + y + z);
+      }
 
       // Creates a version of "multiplier" that returns its result. Function is called "multiplierReturn".
-
+      function multiplierReturn(x, y, z){
+        return (x * y * z);
+      }
+  
 
       // FUNCTION EXECUTION
       // ================================================================================
@@ -43,38 +70,44 @@
 
 
       // Call the adder function here.
-
+      adder (2, 2, 2);
 
       console.log("-------------------");
-
+   
 
       // Call the multiplier function here.
-
+      multiplier (2, 2, 2);
 
       console.log("-------------------");
 
 
       // Call the isString function here.
-
+      // isString("a", "b" , "c")
+      isString('a', 'b', 'c');
 
       console.log("-------------------");
 
 
       // Call the vowelChecker function here.
-
+      // vowelChecker("cat")
 
       console.log("-------------------");
 
 
       // BONUS
       // Call the adderReturn function here and set it equal to a variable. Then log that variable to the console.
-
+      var plus = adderReturn(1, 2, 3);
+      console.log(plus)
+     
 
       console.log("-------------------");
 
 
       // Call the multiplierReturn function here and set it equal to a variable. Then log that variable to the console.
 
+      var times = adderReturn(1, 2, 3);
+      console.log(times)
+   
     </script>
 
   </body>

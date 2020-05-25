@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Window Scope</title>
+  </head>
+  <body>
+
+    <script>
+
+        var OsName = "Unknown";
+        console.log(window.navigator.appVersion.indexOf("win") !=-1); Name =  
+          "Windows OS"; 
+
+        alert("Welcome " + Name );
+
+        getlocation();
+
+        var myElement = document.getElementById("myElement");
+        function getlocation() {
+            if (navigator.getlocatio) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                myElement.innerHTML = "Geo location not supported";
+            }
+        }
+
+        function showPosition(position){
+            var userLatitude = position.coords.latitude;
+            var userLongitude = position.coords.userLongitude;
+            myElement.innerHTML = "latitude" + userLatitude + "<br>Longtitude:" + userLongitude;
+        }
+
+        var url = "https://postman-echo.com/get?coordinate=" + latitude + userLongitude
+
+    
+    </script>
+  </body>
+</html>
