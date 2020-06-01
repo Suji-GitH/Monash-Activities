@@ -31,6 +31,11 @@ function renderTodos() {
 function init() {
   // Write code here to check if there are todos in localStorage
   // If so, parse the value from localStorage and assign it to the todos variable
+  var localStorageTodo = localStorage.getItem("todos");
+
+  if (localStorageTodo !== null) {
+    todo = localStorageTodo;
+  }
 
   // Render todos to the DOM
   renderTodos();

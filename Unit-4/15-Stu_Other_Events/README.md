@@ -17,3 +17,24 @@
 ## Bonus
 
 * If time permits, take a moment to research some other JavaScript events.
+
+Steps:
+
+Change Event for Key or Click
+
+When Key events is selected show #key-event
+
+when Click event is selected show #click-event
+
+when key is pressed .innerHtml to transfer the key pressed
+
+when key is pressed .innerHtml to transfer the key code
+
+when key is pressed log the key pressed
+
+Click event:
+
+where ever the mouse moves x and y coordinates
+
+
+

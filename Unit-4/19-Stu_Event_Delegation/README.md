@@ -17,3 +17,6 @@
   4. When the `save` button is clicked, the description of the current person should be updated in the people array.
 
 * **Bonus**: Use event delegation to make the modal close if the user clicks away from the modal.
+
+Steps:
+when add button is clicked add people to array and list of elements

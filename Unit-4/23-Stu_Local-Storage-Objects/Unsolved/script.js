@@ -37,9 +37,16 @@ signUpButton.addEventListener("click", function(event) {
   } else {
     displayMessage("success", "Registered successfully");
 
-    // set new submission
-    console.log(user);
-    localStorage.setItem("user", user);
+    // set new submission solution
+
+    var user_serialized = JSON.stringify(user);
+    console.log(user_serialized);
+
+    localStorage.setItem("user", user_serialized);
+
+    var user_deserialized = JSON.parse(localStorage.getItem("user"));
+
+    console.log(user_deserialized);
     
     // get most recent submission
     var lastUser = localStorage.getItem("user");

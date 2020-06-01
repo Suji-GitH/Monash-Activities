@@ -21,3 +21,24 @@ function renderTodos() {
     todoList.appendChild(li);
   }
 }
+
+//Event listener for submit
+todoForm.addEventListener("submit", function(Event) {
+  event.preventDefault();
+  //variable for user input which = to values in textbox
+  var userInput = todoInput.value.trim();
+
+  //if the user put is empty return nothing
+  if (userInput === "") {
+    return;
+  }
+
+  //add items to Array 
+  todos.push(userInput);
+  console.log(todos);
+  todoInput.value = "";
+
+//render list again
+renderTodos();
+
+});

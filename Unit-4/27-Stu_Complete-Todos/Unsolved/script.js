@@ -19,6 +19,13 @@ function renderTodos() {
     var li = document.createElement("li");
     li.textContent = todo;
     todoList.appendChild(li);
+
+    var button = document.createElement("button");
+    button.innerHTML = "Done";
+    button.setAttribute("data-index", i);
+
+    li.appendChild(button);
+    
   }
 }
 
@@ -40,3 +47,16 @@ todoForm.addEventListener("submit", function(event) {
   // Re-render the list
   renderTodos();
 });
+
+
+var clickCompleteFunction = function(event){
+    var element = event.target;
+    if(element.mataches("button")){
+      var index = element.getAttribute("data-index");
+      todos.splice(index, 1);
+      renderTodos();
+    }
+}
+
+
+todoList.addEventListener("click", clickCompleteFunction);
