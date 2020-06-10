@@ -77,9 +77,61 @@
 
 $(document).ready(function() {
 
-// Your code here...
+//Variables
+var firstNumber = "";
+var secondNumber = "";
+var operator = "";
+var result = "";
 
+// PART ONE: EVENT BINDING
+$(".number").on("click", function () {
 
+// PART TWO: CAPTURING NUMBERS AND OPERATOR
+  if (operator === "") {
+    firstNumber += $(this).val();
+    $("#first-number").text(firstNumber);
+  } else {
+    secondNumber += $(this).val();
+    $("#second-number").text(secondNumber);
+  }
+});
+$(".operator").on("click", function () {
+  if (firstNumber === "") {
+    return;
+  }
+  operator = $(this).text();
+  $("#operator").text(operator);
+});
+
+$(".equal").on("click", function () {
+// PART 3: CALCULATING AND CLEANUP
+  if (firstNumber === "" || secondNumber === "") {
+    return;
+  }
+    firstNumber = parseInt(firstNumber);
+    secondNumber = parseInt(secondNumber);
+    if (operator === "plus") {
+      result = firstNumber + secondNumber;
+    } else if (operator === "minus") {
+      result = firstNumber - secondNumber;
+    } else if (operator === "times") {
+      result = firstNumber * secondNumber;
+    } else if (operator === "divide") {
+      result = firstNumber / secondNumber;
+    } else if (operator === "power") {
+      result = Math.pow(firstNumber, secondNumber);
+    }
+    isCalculated = true;
+    $("#result").text(result);
+    });
+    $(".clear").on("click", function () {
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    result = "";
+    isCalculated = false;
+    $("#first-number, #second-number, #operator, #result").empty();
+  });
 });
 
 </script>

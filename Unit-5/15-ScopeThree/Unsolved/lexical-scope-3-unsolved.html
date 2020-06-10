@@ -14,7 +14,7 @@
     // -------------------------------------------
     var a = 1;
     function one() {
-      alert("One: " + a);
+      console.log("One: " + a);
     }
 
     // What will get alerted?
@@ -25,7 +25,7 @@
     function twotop() {
 
       function two(a) {
-        alert("Two: " + a);
+        console.log("Two: " + a);
       }
 
       two(a);
@@ -40,7 +40,7 @@
     function three() {
 
       var a = 3;
-      alert("Three: " + a);
+      console.log("Three: " + a);
     }
 
     // What will get alerted?
@@ -55,7 +55,7 @@
         var a = 3;
 
         function third() {
-          alert("Four: " + a);
+          console.log("Four: " + a);
         }
 
         third();
@@ -63,7 +63,7 @@
 
       second();
 
-      alert("Five: " + a);
+      console.log("Five: " + a);
     }
 
     // What will get alerted?

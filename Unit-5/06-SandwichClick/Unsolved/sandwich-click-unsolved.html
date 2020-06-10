@@ -31,7 +31,11 @@
       // ====================================================================
       // Here we create variables for tracking the number of sandwiches eaten
       // ...
+      var pbjCounter = 0;
+      var grillCheeseCounter = 0;
+      var roastBeefCounter = 0;
 
+     
 
       // ...
 
@@ -40,7 +44,20 @@
       // Here we create various on "click" functions which capture the clicks
       // Inside each click event is the code to create an alert, update the counter, then show the updated count.
       // ...
+      $("#pbj").on("click", function() {
+        pbjCounter = pbjCounter + 1;
+        alert("I've eaten " + pbjCounter + " PeanutButter and Jelly Sandwich")
+      });
 
+      $("#grilledcheese").on("click", function() {
+        grillCheeseCounter = grillCheeseCounter + 1;
+        alert("I've eaten " + grillCheeseCounter + " Sandwich Grilled Cheese Sandwich")
+      });
+
+      $("#roastbeef").on("click", function() {
+        roastBeefCounter = roastBeefCounter + 1;
+        alert("I've eaten " + roastBeefCounter + " Roast Beef Sandwich")
+      });
 
       // ...
 

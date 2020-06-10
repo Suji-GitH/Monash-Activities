@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Bootstrap File -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
 
 
@@ -31,6 +33,8 @@
           <span class="fa fa-music"></span> Play Theme!</button>
         <button class="btn btn-dark btn-xs pause-button">
           <span class="fa fa-pause"></span> Pause Song</button>
+        <button class="btn btn-info btn-xs laugh-button">
+          <span class="fa fa-music"></span> Evil Laugh</button>
       </div>
 
     </div>
@@ -49,6 +53,8 @@
                 <span class="fa fa-plus"></span> Grow</button>
               <button class="btn btn-danger btn-lg shrink-button">
                 <span class="fa fa-minus"></span> Shrink</button>
+              <button class="btn btn-success btn-lg stretch-button">
+                <span class="fas fa-arrows-alt"></span> Stretch</button>
             </div>
           </div>
         </div>
@@ -62,6 +68,19 @@
                 <span class="fa fa-eye"></span> Visible</button>
               <button class="btn btn-info btn-lg invis-button">
                 <span class="fa fa-eye-slash"></span> Invisible</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls Clone -->
+        <div id="visibilityControls" class="card">
+          <h4 class="card-header">Superpowers - Clone!</h4>
+          <div class="card-body">
+            <div class="text-center">
+              <button class="btn btn-dark btn-lg removeClone-button">
+                <span></span> Normal</button>
+              <button class="btn btn-info btn-lg clone-button">
+                <span class="fas fa-clone"></span> Clone</button>
             </div>
           </div>
         </div>
@@ -106,6 +125,9 @@
     // Gets Link for Theme Song
     var audioElement = document.createElement("audio");
     audioElement.setAttribute("src", "assets/captainplanet24.mp3");
+    // Get link for Evil laugh
+    var audioElementLaugh = document.createElement("audio");
+    audioElementLaugh.setAttribute("src", "assets/Evillaugh.mp3");
 
     // Theme Button
     $(".theme-button").on("click", function() {
@@ -114,16 +136,23 @@
     $(".pause-button").on("click", function() {
       audioElement.pause();
     });
+    $(".laugh-button").on("click", function() {
+      audioElementLaugh.play();
+    });
+
 
     // Size Buttons
     $(".normal-button").on("click", function() {
-      captainPlanet.animate({ height: "300px" });
+      captainPlanet.animate({ height: "300px", width: "450px" });
     });
     $(".grow-button").on("click", function() {
-      captainPlanet.animate({ height: "500px" });
+      captainPlanet.animate({ height: "500px", width: "750px" });
     });
     $(".shrink-button").on("click", function() {
-      captainPlanet.animate({ height: "100px" });
+      captainPlanet.animate({ height: "100px", width: "150px" });
+    });
+    $(".stretch-button").on("click", function() {
+      captainPlanet.animate({ height: "300px", width: "50px" });
     });
 
     // Visibility Buttons
@@ -132,6 +161,14 @@
     });
     $(".invis-button").on("click", function() {
       captainPlanet.animate({ opacity: "0.05" });
+    });
+
+    //Clone Buttons
+    $(".removeClone-button").on("click", function() {
+      captainPlanet.animate({ opacity: "1" });
+    });
+    $(".Clone-button").on("click", function() {
+      captainPlanet.clone().appendTo(".col-lg-6");
     });
 
     // Move Buttons

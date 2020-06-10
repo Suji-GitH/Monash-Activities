@@ -32,17 +32,39 @@
 
   <script type="text/javascript">
 
+
     $(document).ready(function() {
 
       // CREATE THE MISSING CODE HERE. Your code should add content to the random-number div.
-      // ...
+    
 
 
-      // ...
+      $("#random-button").on("click", function() {
+
+        rdmNum ="";
+      
+      for(i=0; i<9; i++) {
+
+        rdmNum = Math.floor(Math.random()*9) + 1;
+
+        rdmNum += rdmNum;
+
+        $("#random-number").text(rdmNum);
+
+      }  
+      
+
+      });
 
     });
 
+    //random number in range of 10 
+    //for loop it 9 times
+    // append 
+
+
   </script>
+
   
 </body>
 </html>

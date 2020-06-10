@@ -9,8 +9,10 @@
   <h1>Drink Selection!</h1>
   <hr>
 
+
   <!-- Here we create a generic drink-options div -->
   <div id="drink-options"></div>
+
 
   <script type="text/javascript">
 
@@ -27,19 +29,25 @@
       "Ice Tea: $4"
     ];
 
-    // 1. Create code that "grabs" the div with the matching id (#drink-options);
-    // ...
+    
+    
 
+    // console.log(drinkList[1]);
 
-    // ...
+    // // 1. Create code that "grabs" the div with the matching id (#drink-options);
+    var drinkOptions = document.getElementById("drink-options");
 
+    var newli = document.createElement("p");
 
-    // 2. Create a for loop that creates HTML content of all the drinks using JavaScript.
-    // HINT: You will need to use each of the following methods: createElement, textContent, appendChild
-    // ...
+    // // 2. Create a for loop that creates HTML content of all the drinks using JavaScript.
+    // // HINT: You will need to use each of the following methods: createElement, textContent, appendChild
+    
+    drinkList.forEach(inbedList(drinkList));
 
-
-    // ...
+    function inbedList(index){
+      newli.textContent = index;
+      drinkOptions.appendChild(newli)
+    };
 
   </script>
 

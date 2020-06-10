@@ -19,11 +19,11 @@
     function a1() {
       myVar1 = 5 - 3;
       b1();
-      alert("Q1 | a: " + myVar1);
+      console.log("Q1 | a: " + myVar1);
     }
 
     function b1() {
-      alert("Q1 | b: " + myVar1);
+      console.log("Q1 | b: " + myVar1);
     }
     a1();
 
@@ -33,13 +33,15 @@
     var myVar2 = 1;
 
     function a2() {
+      // Declaring new local variable inside the function
       var myVar2 = 5 - 3;
       b2();
-      alert("Q2 | a: " + myVar2);
+      console.log("Q2 | a: " + myVar2);
     }
 
     function b2() {
-      alert("Q2 | b: " + myVar2);
+      //Getting the myVar2 from global variable
+      console.log("Q2 | b: " + myVar2);
     }
     a2();
 
