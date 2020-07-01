@@ -12,32 +12,34 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
-    //
+    //EventListener on the button
     $("#cat-button").on("click", function() {
 
-      //
-      var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cats";
+      var apiKey = "vGEywV0qzTmgqlaId2nBDqWXddHQkjTH"; 
 
-      //
+      //Creating the URL 
+      var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=vGEywV0qzTmgqlaId2nBDqWXddHQkjTH&tag=cats";
+
+      //ajax Query for API
       $.ajax({
         url: queryURL,
         method: "GET"
       })
 
-      //
+      //wait until get URL
         .then(function(response) {
 
-        //
+        //variable for imageUrl
           var imageUrl = response.data.image_original_url;
 
-          //
+          //Create new img element for html
           var catImage = $("<img>");
 
-          //
+          //set attribute for image
           catImage.attr("src", imageUrl);
           catImage.attr("alt", "cat image");
 
-          //
+          //display latest giphy 
           $("#images").prepend(catImage);
         });
     });

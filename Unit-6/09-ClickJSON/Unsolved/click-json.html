@@ -30,6 +30,9 @@
       <input id="add-movie" type="submit" value="Add a Movie, Yo!">
     </form>
 
+    <!-- Movie info -->
+    <div id="movie-info"></div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
       // Initial array of movies
@@ -38,7 +41,31 @@
       // Function for dumping the JSON content for each button into the div
       function displayMovieInfo() {
 
-        // YOUR CODE GOES HERE!!! HINT: You will need to create a new div to hold the JSON.
+        var movieButton = $(this).html();
+
+        var queryURL = "https://www.omdbapi.com/?t=" + movieButton + "&apikey=trilogy";
+
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).then(function(response) {
+
+          console.log(response);
+
+          console.log(response.Ratings[0].value);
+           
+            var movieInfo = $("<div>");
+            
+            var Poster = $("<img src= '" + response.Poster + "'>");
+            var Rating = $("<div>").html(response.Ratings.value);
+            var Released = $("<div>").html(response.Released);
+            var Plot = $("<div>").html(response.Plot);
+          
+            movieInfo.append(Plot, Rating, Released, Poster);
+        
+            $("#movie-info").append(movieInfo);
+
+        })
 
       }
 
