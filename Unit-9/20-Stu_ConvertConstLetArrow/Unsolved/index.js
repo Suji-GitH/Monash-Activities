@@ -1,11 +1,11 @@
-var $root = document.querySelector("#root");
+const $ROOT = document.querySelector("#root");
 
-var score;
-var targetScore;
+let score;
+let targetScore;
 
-var makeGuess = function() {
-  var $score = document.querySelector("#root p");
-  $score.textContent = "Score: " + score + " | " + "Target: " + targetScore;
+const MAKEGUESS = _ => {
+  const $SCORE = document.querySelector("#root p");
+  $SCORE.textContent = "Score: " + score + " | " + "Target: " + targetScore;
 
   if (score > targetScore) {
     alert("You lost this round!");
@@ -16,7 +16,7 @@ var makeGuess = function() {
   }
 };
 
-var Crystal = function(color) {
+let Crystal = function(color) {
   this.element = document.createElement("div");
   this.element.className = "crystal " + color;
   this.value = 0;
@@ -25,7 +25,7 @@ var Crystal = function(color) {
     "click",
     function() {
       score += this.value;
-      makeGuess();
+      MAKEGUESS();
     }.bind(this),
     false
   );
@@ -36,24 +36,20 @@ Crystal.prototype.render = function(target) {
   target.appendChild(this.element);
 };
 
-var crystals = [new Crystal("red"), new Crystal("blue"), new Crystal("green")];
+const crystals = [new Crystal("red"), new Crystal("blue"), new Crystal("green")];
 
-var playRound = function() {
-  var fragment = document.createDocumentFragment();
-  var $score = document.createElement("p");
+const PLAYROUND = function() {
+  const FRAGMENT = document.createDocumentFragment();
+  const $SCORE = document.createElement("p");
   targetScore = Math.floor(Math.random() * 50) + 25;
   score = 0;
-  $score.textContent = "Score: " + score + " | " + "Target: " + targetScore;
+  $SCORE.textContent = "Score: " + score + " | " + "Target: " + targetScore;
   crystals
-    .sort(function() {
-      return 0.5 - Math.random();
-    })
-    .forEach(function(crystal) {
-      crystal.render(fragment);
-    });
-  fragment.appendChild($score);
-  $root.innerHTML = "";
-  $root.appendChild(fragment);
+    .sort = _ => 0.5 - Math.random().forEach(crystal => crystal.render(fragment));
+
+  fragment.appendChild($SCORE);
+  $ROOT.innerHTML = "";
+  $ROOT.appendChild(fragment);
 };
 
-playRound();
+PLAYROUND();

@@ -18,10 +18,12 @@ const isPrime = num => {
 
 // Complete the following
 
+var primeArray = originalArray.filter(isPrime);
+
 // 1. A filter that runs through the original array and creates a new array containing only its prime numbers (`primeArray`)
 // Use the isPrime function provided to help with this
 
-
+var moreThan5Array = originalArray.filter(num => num > 5);
 // 2. A filter that runs through the original array and creates a new array containing only its numbers larger than 5(`moreThan5Array`)
 
 // Your code here
