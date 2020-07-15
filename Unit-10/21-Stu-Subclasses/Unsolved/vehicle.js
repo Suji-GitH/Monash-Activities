@@ -11,3 +11,26 @@ class Vehicle {
   }
 }
 module.exports = Vehicle;
+
+class car extends Vehicle {
+  constructor(id, color, passengers) {
+    super(id, 4, "Beep!");
+
+
+    this.color = color;
+    this.passengers = passengers;
+
+    checkPassengers = () => {
+      if(passengers > 4){
+        console.log("Too Many Passengers")
+      }
+    };
+    useHorn = () => {
+      console.log(this.sound);
+    };
+  }
+}
+
+const car = new car("black", 3);
+car.checkPassengers();
+car.useHorn();

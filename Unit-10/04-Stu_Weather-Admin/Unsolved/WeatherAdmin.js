@@ -1,10 +1,14 @@
 var fs = require("fs");
-var UserSearch = require("UserSearch.js");
+var UserSearch = require("./UserSearch.js");
 var moment = require("moment");
 
 var WeatherAdmin = function() {
   this.getData = function() {
     fs.readFile("log.txt", "utf8", function(data, error) {
+      if (error) {
+        console.log(error);
+        return;
+      }
       console.log(data);
     });
   };
@@ -19,7 +23,7 @@ var WeatherAdmin = function() {
       " Date: " +
       moment(newUserSearch.date).format("MM-DD-YYYY");
 
-    fs.appendFile("log.txt", "utf-8", logTxt, (err) => {
+    fs.appendFile("log.txt", logTxt, (err) => {
       if (err) throw err;
     });
 
